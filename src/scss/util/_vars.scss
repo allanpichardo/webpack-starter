@@ -1,0 +1,13 @@
+$min-width: 320px;
+
+$screen-xs-min: 320px;
+$screen-xs-max: 480px;
+$screen-sm-min: $screen-xs-max + 1;
+$screen-sm-max: 768px;
+$screen-md-min: $screen-sm-max + 1;
+$screen-md-max: 992px;
+$screen-lg-min: $screen-md-max + 1;
+$screen-lg-max: 1200px;
+$screen-xl-min: $screen-lg-max + 1;
+
+$grid-pad: 0;

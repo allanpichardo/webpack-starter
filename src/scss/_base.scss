@@ -1,0 +1,106 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+/*
+-----------------------------------------------------------
+This is a hack. It works in:
+FF 3.6+, Anroid 2.2+, Safari, Chrome, IE7, IE8, IE9+
+-----------------------------------------------------------
+*/
+
+html {
+  font-family: 'xs';
+}
+
+* html { /* IE6 */
+  font-family: 'md'
+}
+
+*+html { /* IE7 */
+  font-family: 'md'
+}
+
+@media \0screen {
+  html {  /* IE8 */
+    font-family: 'md'
+  }
+}
+
+// http://galengidman.com/2014/03/25/responsive-flexible-height-sticky-footers-in-css/
+html, body {
+  //height: 100%;
+}
+
+body { 
+  background-color: #fff;
+  // display: table;
+  width: 100%;
+}
+
+
+/* Queries for supported browsers.       
+ ----------------------------------- */
+
+@include media-query("xs-only") {
+  html {
+    font-family: "xs";
+  }
+}
+// @include media-query("xs-up") {
+//   html {
+//     font-family: "xs-up";
+//   }
+// }
+@include media-query("sm-only") {
+  html {
+    font-family: "sm";
+  }
+}
+// @include media-query("sm-up") {
+//   html {
+//     font-family: "sm-up";
+//   }
+// }
+@include media-query("md-only") {
+  html {
+    font-family: "md";
+  }
+}
+// @include media-query("md-up") {
+//   html {
+//     font-family: "md-up";
+//   }
+// }
+@include media-query("lg-only") {
+  html {
+    font-family: "lg";
+  }
+}
+// @include media-query("lg-up") {
+//   html {
+//     font-family: "lg-up";
+//   }
+// }
+@include media-query("xl-up") {
+  html {
+    font-family: "xl";
+  }
+}
+
+/* Prevent hiding of scrollbars in Chrome/Safari */
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); 
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}

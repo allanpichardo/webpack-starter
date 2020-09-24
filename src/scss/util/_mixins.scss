@@ -1,0 +1,108 @@
+// Includes IE8 support - http://jakearchibald.github.io/sass-ie/
+$fix-mqs: false !default;
+
+@mixin media-query($point) {
+  @if $fix-mqs {
+    @each $pt in $fix-mqs {
+      @if $pt == $point {
+        @content;
+      }
+    }
+  }
+
+  @else {
+    @if $point == xl-up {
+      @media (min-width: $screen-xl-min) { @content; }
+    }
+    @else if $point == lg-up {
+      @media (min-width: $screen-lg-min) { @content; }
+    }
+    @else if $point == lg-only {
+      @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) { @content; }
+    }
+    @else if $point == md-up {
+      @media (min-width: $screen-md-min) { @content; }
+    }
+    @else if $point == md-only {
+      @media (min-width: $screen-md-min) and (max-width: $screen-md-max) { @content; }
+    }
+    @else if $point == sm-up {
+      @media (min-width: $screen-sm-min) { @content; }
+    }
+    @else if $point == md-down {
+      @media (max-width: $screen-md-min) { @content; }
+    }
+    @else if $point == sm-only {
+      @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)  { @content; }
+    }
+    @else if $point == xs-up {
+      @media (min-width: $screen-xs-min)  { @content; }
+    }
+    @else if $point == xs-only {
+      @media (min-width: $screen-xs-min) and (max-width: $screen-xs-max)  { @content; }
+    }
+    @else {
+      @media ($point) { @content; }
+    }
+  }
+}
+
+$old-ie: false !default;
+
+@mixin old-ie {
+    // Only use this content if we're dealing with old IE
+    @if $old-ie {
+        @content;
+    }
+}
+
+@mixin keyframe ($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+ 
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+ 
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+ 
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation ($delay, $duration, $animation) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+ 
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+ 
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+ 
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin anchor-inline{
+    color: $inline-link;
+    text-decoration: underline;
+}

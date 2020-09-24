@@ -1,0 +1,100 @@
+.ojp-grid {
+  // background: white;
+  // margin: 0 0 $grid-pad 0;
+  margin: 0;
+  
+  @extend .clearfix;
+  // &:after {
+  //   /* Or @extend clearfix */
+  //   content: "";
+  //   display: table;
+  //   clear: both;
+  // }
+}
+
+[class*='ojp-col-'] {
+  float: left;
+  // .ojp-grid &:last-of-type {
+  //   padding-right: 0;
+  // }
+  // @include media-query("md-up") {
+  //   padding-right: $grid-pad;
+  // }
+}
+
+.ojp-col-4,
+.ojp-col-8,
+.ojp-col-9,
+.ojp-col-12,
+.ojp-col-6,
+.ojp-col-5,
+.ojp-col-3,
+.ojp-col-2,
+.ojp-col-1,
+.ojp-col-20p {
+  width: 100%;
+  @extend .clearfix;
+}
+.mobile-col.ojp-col-6{
+  width:50%;
+}
+
+@include media-query("md-up") {
+  .ojp-col-12 {
+    width: 100%;
+  }
+  .ojp-col-9 {
+    width: 75%;
+  }
+  .ojp-col-8 {
+    width: 66.66%;
+  }
+  .ojp-col-4 {
+    width: 33.33%;
+  }
+  .ojp-col-5 {
+    width: 41.6666666667%;
+  }
+  .ojp-col-6 {
+    width: 50%;
+  }
+  .ojp-col-3 {
+    width: 25%;
+  }
+  .ojp-col-2 {
+    width: 16.666666667%;
+  }
+  .ojp-col-20p {
+    width: 20%;
+  }
+  .ojp-col-offset-1 {
+    margin-left: 8.333333333%;    
+  }
+}
+
+/* Opt-in outside padding */
+.ojp-grid-pad {
+  padding: $grid-pad 0 $grid-pad $grid-pad;
+  [class*='col-']:last-of-type {
+    padding-right: $grid-pad;
+  }
+}
+
+@include media-query("md-up") {
+  .ojp-grid > div.right {
+    text-align: right;
+  }
+
+  .ojp-grid-gutter {
+    padding-left: $grid-pad / 2;
+    padding-right: $grid-pad / 2;
+  
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+}
