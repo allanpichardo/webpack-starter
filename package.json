@@ -1,12 +1,12 @@
 {
-  "name": "malarkey-roofing-theme",
+  "name": "project-name",
   "sideEffects": [
     "*.css",
     "*.scss"
   ],
   "version": "1.0.0",
-  "description": "Malarkey Roofing Wordpress Theme",
-  "main": "index.js",
+  "description": "Your super amazing project",
+  "main": "dist/main.bundle.js",
   "scripts": {
     "start": "webpack --config webpack.dev.js --watch --info-verbosity verbose",
     "build": "NODE_ENV=production webpack --config webpack.prod.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/owen-jones/malarkey-roofing.git"
+    "url": "git+https://github.com/allanpichardo/webpack-starter"
   },
-  "author": "Owen Jones",
+  "author": "Allan Pichardo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/owen-jones/malarkey-roofing/issues"
+    "url": "https://github.com/allanpichardo/webpack-starter/issues"
   },
-  "homepage": "https://github.com/owen-jones/malarkey-roofing#readme",
+  "homepage": "https://github.com/allanpichardo/webpack-starter#readme",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-transform-runtime": "^7.11.5",
